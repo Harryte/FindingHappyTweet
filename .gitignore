@@ -1,3 +1,5 @@
+
+twitter_credentials.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -26,6 +28,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.find_happy_tweet/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
