@@ -15,7 +15,6 @@ auth = tweepy.OAuthHandler(
 auth.set_access_token(os.environ['ACCESS_TOKEN'],
                       os.environ['ACCESS_TOKEN_SECRET'])
 
-
 api = tweepy.API(auth)
 home_timeline = api.home_timeline()
 
