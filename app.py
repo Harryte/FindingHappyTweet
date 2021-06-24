@@ -16,7 +16,7 @@ def main():
         print(type(average_time), type(stream_limit))
 
         myStreamListener = ts.MyStreamListener(
-            int(average_time), int(stream_limit))
+            int(average_time) * 3600, int(stream_limit))
         myStream = ts.tweepy.Stream(
             auth=ts.api.auth, listener=myStreamListener)
         myStream.filter(track=[':)'])
