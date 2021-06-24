@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 50%;
+}
+.result {
+    margin: auto;
+    width: 50%;
+    border: 1px solid #ccc;
+}
+</style>
+<head>
+    <title>Finding Happiest Hashtag</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Finding Happiest Hashtag:</legend>
+        Find Happiest Hashtag from last 
+        <input name="average_time" type="number"> Seconds
+        <br>
+        <br> Stream Limit in Seconds:
+        <input name="stream_limit" type="number">
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    <!-- {% if result %}
+        {% for variable, value in original_input.items() %}
+            <b>{{ variable }}</b> : {{ value }}
+        {% endfor %} -->
+        <br>
+        <br> Happiest Hashtag is:
+           <p style="font-size:50px">{{ result }}</p>
+    <!-- {% endif %} -->
+</div>
+</html>
