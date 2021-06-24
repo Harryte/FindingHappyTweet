@@ -3,14 +3,19 @@ import webbrowser
 import time
 import re
 from collections import Counter
-import twitter_credentials as credenitals
+# import twitter_credentials as credenitals
 import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 callback_uri = 'oob'
 auth = tweepy.OAuthHandler(
-    credenitals.API_KEY, credenitals.API_SECRETE_KEY, callback_uri)
-auth.set_access_token(credenitals.ACCESS_TOKEN,
-                      credenitals.ACCESS_TOKEN_SECRET)
+    os.environ['API_KEY'], os.environ['API_SECRETE_KEY'], callback_uri)
+auth.set_access_token(os.environ['ACCESS_TOKEN'],
+                      os.environ['ACCESS_TOKEN_SECRET'])
+
+
 api = tweepy.API(auth)
 home_timeline = api.home_timeline()
 
@@ -55,5 +60,3 @@ def find_happiest_hashtag_from_list(hashtag_list):
     happiest_hashtag = max(hashtag_dict, key=lambda k: hashtag_dict[k])
     print(happiest_hashtag)
     return happiest_hashtag
-
-
