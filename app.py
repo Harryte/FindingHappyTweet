@@ -1,11 +1,13 @@
 import flask
 import tweetStream as ts
+
 app = flask.Flask(__name__, template_folder='templates')
 
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if flask.request.method == 'GET':
+        print()
         return(flask.render_template('main.html'))
 
     if flask.request.method == 'POST':
